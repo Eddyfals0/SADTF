@@ -1,2 +1,2 @@
 # SADTF
-sistema de almacenamiento distribuido tolerante a fallas [Proyecto final hecho por el eddy fals0]
+sistema de almacenamiento distribuido tolerante a fallas [Proyecto final hecho por el eddyfals0]
