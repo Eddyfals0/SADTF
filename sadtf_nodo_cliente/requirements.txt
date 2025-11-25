@@ -1,3 +1,0 @@
-# Dependencias nodo/cliente
-requests
-pytest

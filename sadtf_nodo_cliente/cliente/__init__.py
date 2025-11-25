@@ -1,1 +1,0 @@
-"""Paquete cliente - stubs"""

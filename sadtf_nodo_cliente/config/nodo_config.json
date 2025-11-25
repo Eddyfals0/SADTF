@@ -1,5 +1,0 @@
-{
-  "capacidad_mb": 1024,
-  "espacio_compartido": "./espacioCompartido",
-  "coordinador": "127.0.0.1:9000"
-}
