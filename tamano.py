@@ -1,3 +1,7 @@
+"""
+Programa para calcular el tamaño de un archivo
+"""
+
 import os
 
 def obtener_tamano(ruta):

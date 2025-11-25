@@ -1,0 +1,3 @@
+# Dependencias del coordinador
+flask
+pytest
