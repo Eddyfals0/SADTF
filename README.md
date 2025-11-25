@@ -6,12 +6,41 @@ Un sistema descentralizado que permite almacenar y administrar archivos grandes 
 
 ---
 
-## 📚 Documentación Rápida
+## ⚡ INICIO EN 2 MINUTOS
 
-- 📖 **README.md** ← Este archivo (visión general)
-- 📊 **DIAGRAMA_FUNCIONAMIENTO.md** ← Flujos detallados con diagramas
-- ⚡ **GUIA_RAPIDA.md** ← Cómo usar el sistema (3 pasos)
-- 📑 **INDICE_DOCUMENTACION.md** ← Índice y navegación
+```bash
+# 1. Instalar dependencias
+pip install -r requirements.txt
+
+# 2. Ejecutar
+python gui.py
+
+# 3. Haz clic en [🚀 CONECTAR AL CLUSTER]
+# ¡LISTO! Ya estás en el cluster
+```
+
+**Eso es todo. Auto-configurable, sin terminales, sin configuración manual.**
+
+### ✨ Características de la GUI Simple
+
+✅ Auto-detección de IP y puerto  
+✅ Un botón para conectar  
+✅ Ver archivos en tabla  
+✅ Subir/descargar con botones  
+✅ Monitoreo del cluster  
+
+---
+
+## 📚 Documentación
+
+| Documento | Contenido |
+|-----------|----------|
+| **⚡ INICIO_RAPIDO.md** | **Cómo empezar en 2 minutos** ⭐ |
+| **🎨 INTERFAZ_GRAFICA.md** | Guía completa de la GUI |
+| **📖 MANUAL_USUARIO.md** | Manual completo con ejemplos |
+| **🆘 MANUAL_ERRORES.md** | Solución de errores comunes |
+| **📊 DIAGRAMA_FUNCIONAMIENTO.md** | Flujos técnicos |
+| **📑 INDICE_DOCUMENTACION.md** | Índice de navegación |
 
 ---
 
@@ -36,8 +65,9 @@ Capacidad Total: 220 MB
 ✅ **Tolerancia a Fallas**: Cada bloque se replica en 2 nodos  
 ✅ **Paginación**: Tabla de bloques (similar a tabla de páginas)  
 ✅ **Sincronización**: Heartbeat cada 5 segundos  
-✅ **Interfaz Amigable**: CLI interactivo en cada nodo  
+✅ **Interfaz Gráfica**: GUI moderna con Flet  
 ✅ **Descentralizado**: Sin nodo maestro, todos son iguales  
+✅ **Auto-configuración**: Detecta IP, puerto y nombre automáticamente  
 
 ---
 
@@ -46,321 +76,199 @@ Capacidad Total: 220 MB
 ```
 SADTF/
 ├── 📄 README.md                    ← Este archivo
-├── 📄 DIAGRAMA_FUNCIONAMIENTO.md   ← Diagramas
-├── 📄 GUIA_RAPIDA.md              ← Guía de uso
-├── 📄 INDICE_DOCUMENTACION.md      ← Índice
+├── 📄 INICIO_RAPIDO.md            ← Cómo empezar (2 min)
+├── 📄 INTERFAZ_GRAFICA.md         ← Guía de GUI
+├── 📄 MANUAL_USUARIO.md           ← Manual completo
+├── 📄 MANUAL_ERRORES.md           ← Solución de errores
+├── 📄 DIAGRAMA_FUNCIONAMIENTO.md  ← Flujos técnicos
+├── 📄 INDICE_DOCUMENTACION.md     ← Índice
 │
-├── 📄 requirements.txt              ← pytest, pytest-cov
-├── 📄 setup_config.py               ← Generador de configs
+├── 📄 requirements.txt             ← flet, pytest, pytest-cov
+├── 📄 gui.py                       ← Ejecutor de GUI (RECOMENDADO)
+├── 📄 setup_config.py              ← Generador de configs
 │
 ├── 📁 config/
-│   └── nodo_config.json             ← Configuración
+│   └── nodo_config.json            ← Auto-generado
 │
-├── 📁 nodo_descentralizado/         ← MÓDULOS PRINCIPALES (13 archivos)
-│   ├── main.py                      ← Punto de entrada
-│   ├── cli.py                       ← Interfaz de usuario
-│   ├── api_archivos.py              ← Lógica PUT/GET/DELETE
-│   ├── tabla_nodos.py               ← Registro de nodos
-│   ├── tabla_bloques.py             ← Mapeo de bloques
-│   ├── storage_manager.py           ← Lectura/escritura disco
-│   ├── servidor_rpc.py              ← Servidor RPC
-│   ├── cliente_rpc.py               ← Cliente RPC
-│   ├── protocolo.py                 ← Formato de mensajes
-│   ├── heartbeat.py                 ← Sincronización
-│   ├── replicacion_meta.py          ← Sincronización metadatos
-│   ├── utils_logger.py              ← Logging
+├── 📁 nodo_descentralizado/        ← MÓDULOS PRINCIPALES
+│   ├── gui_simple.py               ← GUI simplificada
+│   ├── gui_moderna.py              ← GUI moderna (opcional)
+│   ├── auto_config.py              ← Auto-configuración
+│   ├── main.py                     ← CLI principal
+│   ├── api_archivos.py             ← Lógica PUT/GET/DELETE
+│   ├── tabla_nodos.py              ← Registro de nodos
+│   ├── tabla_bloques.py            ← Mapeo de bloques
+│   ├── storage_manager.py          ← Lectura/escritura disco
+│   ├── servidor_rpc.py             ← Servidor RPC
+│   ├── cliente_rpc.py              ← Cliente RPC
+│   ├── protocolo.py                ← Formato de mensajes
+│   ├── heartbeat.py                ← Sincronización
+│   ├── replicacion_meta.py         ← Sincronización metadatos
+│   ├── utils_logger.py             ← Logging
 │   └── __init__.py
 │
-├── 📁 espacioCompartido/            ← Almacenamiento físico
+├── 📁 espacioCompartido/           ← Almacenamiento físico
 │   └── (bloques guardados aquí)
 │
-├── 📁 tests/                        ← Tests unitarios (14 tests)
-│   ├── test_tabla_nodos.py          ← 6 tests
-│   ├── test_tabla_bloques.py        ← 5 tests
-│   ├── test_storage.py              ← 3 tests
+├── 📁 tests/                       ← Tests unitarios (14 tests)
+│   ├── test_tabla_nodos.py
+│   ├── test_tabla_bloques.py
+│   ├── test_storage.py
 │   └── __init__.py
 │
-├── 📁 docs/                         ← Documentación adicional
+├── 📁 docs/                        ← Documentación adicional
 │   ├── diseno_arquitectura.md
 │   └── notas_pruebas.md
 │
-└── 📁 env/                          ← Python virtual environment
-    ├── pyvenv.cfg
-    ├── Include/
-    ├── Lib/
-    └── Scripts/
+└── 📁 env/                         ← Virtual environment
 ```
 
 ---
 
-## 🚀 Inicio Rápido (3 Pasos)
+## 🚀 Cómo Usar
 
-### 1. Instalar Dependencias
+### OPCIÓN 1: GUI Simple (Recomendado) ⭐
+
+**Super fácil, sin configuración:**
+
 ```bash
-pip install -r requirements.txt
+python gui.py
 ```
 
-### 2. Crear Configuración para 3 Nodos
+- Se abre interfaz automáticamente
+- Detecta tu IP y puerto
+- Un botón para conectar
+- ¡Listo!
+
+### OPCIÓN 2: GUI Moderna (Más funciones)
+
 ```bash
+python -m nodo_descentralizado.gui_moderna
+```
+
+### OPCIÓN 3: CLI en Terminal (Para múltiples nodos)
+
+```bash
+# Crear 3 nodos con 50 MB cada uno
 python setup_config.py 3 9000 50
-```
-Genera:
-- `config/nodo_1_config.json` (puerto 9001, 50 MB)
-- `config/nodo_2_config.json` (puerto 9002, 50 MB)
-- `config/nodo_3_config.json` (puerto 9003, 50 MB)
 
-### 3. Ejecutar (3 Terminales)
-
-**Terminal 1:**
-```bash
+# Terminal 1
 python -m nodo_descentralizado.main
-```
 
-**Terminal 2:**
-```bash
-cp config/nodo_2_config.json config/nodo_config.json
+# Terminal 2
+copy config\nodo_2_config.json config\nodo_config.json
 python -m nodo_descentralizado.main
-```
 
-**Terminal 3:**
-```bash
-cp config/nodo_3_config.json config/nodo_config.json
+# Terminal 3
+copy config\nodo_3_config.json config\nodo_config.json
 python -m nodo_descentralizado.main
 ```
 
 ---
 
-## 📊 Cómo Funciona
+## 📊 Características
 
-### Subir Archivo (5 MB)
-```
-Usuario → Opción 1 en CLI
-    ↓
-Calcular bloques: 5 MB ÷ 1 MB = 5 bloques
-    ↓
-Asignar en tabla_bloques: [10, 11, 12, 13, 14]
-    ↓
-Guardar localmente en espacioCompartido/
-    ↓
-Replicar en otros nodos (vía RPC)
-    ↓
-Registrar en tabla_bloques:
-  - Bloque 10: [nodo_1, nodo_2]
-  - Bloque 11: [nodo_2, nodo_3]
-  - etc...
-    ↓
-✅ "Archivo subido: file_xyz (5 bloques)"
-```
-
-### Descargar Archivo
-```
-Usuario → Opción 2 en CLI
-    ↓
-Buscar en tabla_bloques: bloques = [10, 11, 12, 13, 14]
-    ↓
-Para cada bloque:
-  - Intentar leer localmente
-  - Si no está, obtener de réplica vía RPC
-    ↓
-Juntar bloques en orden
-    ↓
-✅ Guardar archivo_xyz.pdf (5 MB)
-```
-
-### Tolerancia a Fallas
-```
-Si nodo_2 se cae:
-  - Bloque 10 sigue en nodo_1 ✓
-  - Bloque 11 sigue en nodo_3 ✓
-  - Archivo completamente recuperable ✓
-```
+| Característica | GUI Simple | GUI Moderna | CLI |
+|---|---|---|---|
+| Facilidad | ✅ Muy fácil | ✅ Fácil | ⚠️ Media |
+| Auto-configuración | ✅ Sí | ⚠️ Manual | ❌ No |
+| Un botón conectar | ✅ Sí | ❌ No | ❌ No |
+| Ver archivos | ✅ Tabla | ✅ Tabla | ✅ Texto |
+| Subir/descargar | ✅ Botones | ✅ Botones | ✅ Menú |
+| Monitoreo cluster | ✅ Visual | ✅ Tablas | ✅ Texto |
+| Múltiples nodos | ❌ 1 PC | ❌ 1 PC | ✅ 3+ PCs |
 
 ---
 
-## 🔧 Componentes Principales
+## 💡 Ejemplos
 
-| Módulo | Propósito | Responsabilidad |
-|--------|-----------|-----------------|
-| **main.py** | Punto de entrada | Inicializa NodoDescentralizado |
-| **cli.py** | Interfaz usuario | 8 opciones menú interactivo |
-| **api_archivos.py** | Lógica de archivos | PUT/GET/DELETE de archivos |
-| **tabla_nodos.py** | Registro de nodos | Quiénes están activos |
-| **tabla_bloques.py** | Mapeo de bloques | Dónde está cada bloque |
-| **storage_manager.py** | Almacenamiento | Lee/escribe disco |
-| **servidor_rpc.py** | Servidor RPC | Acepta peticiones |
-| **cliente_rpc.py** | Cliente RPC | Comunica con otros nodos |
-| **protocolo.py** | Protocolo | Formato de mensajes JSON |
-| **heartbeat.py** | Sincronización | Latido periódico (5s) |
-| **replicacion_meta.py** | Sincronización | Sincroniza metadatos |
-| **utils_logger.py** | Logging | Imprime logs ordenados |
+### Ejemplo 1: Una sola PC
 
----
-
-## 💡 Conceptos Clave
-
-### Bloque
-- Unidad de almacenamiento = **1 MB**
-- Archivo se divide en bloques
-- Cada bloque tiene ID único (0-219 para 220 MB)
-
-### Tabla de Bloques
-- Mapeo: **Bloque ID → [Nodo réplica 1, Nodo réplica 2]**
-- Similar a tabla de páginas en memoria virtual
-- Total de entradas = Suma de capacidades de nodos
-
-### Réplica
-- **Copia de un bloque en otro nodo**
-- Default: 2 replicas por bloque
-- Tolera falla de 1 nodo
-
-### Nodo
-- Una computadora del cluster
-- Tiene **espacioCompartido** (50-100 MB configurable)
-- Corre servidor RPC en un puerto único
-
-### Heartbeat
-- **Latido periódico cada 5 segundos**
-- Detecta nodos caídos
-- Timeout: 15 segundos sin respuesta
-
----
-
-## 📈 Ejemplo: Cluster de 3 Nodos
-
+```bash
+python gui.py
 ```
-Configuración:
-  nodo_1: 127.0.0.1:9001, capacidad 50 MB
-  nodo_2: 127.0.0.1:9002, capacidad 70 MB
-  nodo_3: 127.0.0.1:9003, capacidad 100 MB
 
-Capacidad Total: 220 MB
-Tabla de Bloques: 220 entradas (0-219)
+Se configura automáticamente y puedes subir/descargar archivos.
 
-Subir archivo de 5 MB:
-  5 MB ÷ 1 MB = 5 bloques
-  
-  Bloque │ Contenido      │ Ubicación
-  ───────┼────────────────┼──────────────────
-    10   │ archivo[0]     │ nodo_1, nodo_2
-    11   │ archivo[1]     │ nodo_2, nodo_3
-    12   │ archivo[2]     │ nodo_1, nodo_3
-    13   │ archivo[3]     │ nodo_2, nodo_1
-    14   │ archivo[4]     │ nodo_3, nodo_2
+### Ejemplo 2: Múltiples PCs (Red)
 
-Si nodo_2 se cae:
-  ✅ Bloque 10 sigue en nodo_1
-  ✅ Bloque 11 sigue en nodo_3
-  ✅ Bloque 13 sigue en nodo_1
-  ✅ Bloque 14 sigue en nodo_3
-  → ARCHIVO COMPLETO Y RECUPERABLE
+**PC 1:**
+```bash
+python gui.py  # Detecta 192.168.1.100:9001
 ```
+
+**PC 2:**
+```bash
+python gui.py  # Detecta 192.168.1.101:9001
+```
+
+**PC 3:**
+```bash
+python gui.py  # Detecta 192.168.1.102:9001
+```
+
+Todos se conectan automáticamente. ✅
 
 ---
 
 ## 🧪 Testing
 
-### Ejecutar Tests
 ```bash
-# Todos los tests
+# Ejecutar todos los tests
 pytest tests/ -v
 
 # Con cobertura
 pytest tests/ --cov=nodo_descentralizado
 ```
 
-### Tests Disponibles
-- **test_tabla_nodos.py**: 6 tests para TablaNodos
-- **test_tabla_bloques.py**: 5 tests para TablaBloques
-- **test_storage.py**: 3 tests para StorageManager
-
-Total: **14 tests unitarios**
+**Resultados:** 14 tests unitarios ✅
 
 ---
 
-## 📝 Operaciones en CLI
+## 📈 Estadísticas del Proyecto
 
-1. **Subir archivo** → Seleccionar ruta local
-2. **Descargar archivo** → Ingresar ID del archivo
-3. **Eliminar archivo** → Confirmar eliminación
-4. **Ver información** → Detalles de archivo (bloques y replicas)
-5. **Listar archivos** → Tabla de todos los archivos
-6. **Ver tabla de bloques** → Estado (total, usado, libre, %)
-7. **Ver nodos activos** → Tabla de nodos del cluster
-8. **Salir** → Terminar programa
+- **Módulos:** 13 (Python)
+- **Líneas de código:** ~2000+
+- **Tests:** 14 unitarios
+- **Documentación:** 7 archivos (50+ KB)
+- **Interfaz:** GUI + CLI
+- **Características:** Auto-config, Replicación, Heartbeat, RPC
 
 ---
 
-## 🔧 Configuración Personalizada
-
-Editar `config/nodo_config.json`:
-
-```json
-{
-  "nodo_id": "nodo_1",
-  "host": "127.0.0.1",
-  "puerto": 9001,
-  "capacidad_mb": 50,
-  "espacioCompartido": "./espacioCompartido",
-  "nodo_bootstrap": "127.0.0.1:9001",
-  "heartbeat_intervalo": 5,
-  "timeout_nodo": 15
-}
-```
-
-### Script Automático
-```bash
-# Crear N nodos con capacidad K MB en puertos 9000+
-python setup_config.py <N> <puerto_base> <capacidad_mb>
-
-# Ejemplos:
-python setup_config.py 3 9000 50      # 3 nodos de 50 MB
-python setup_config.py 5 9000 100     # 5 nodos de 100 MB
-```
-
----
-
-## ⚠️ Troubleshooting
-
-| Problema | Solución |
-|----------|----------|
-| "Puerto ya en uso" | Cambiar puerto en config/nodo_config.json |
-| "No hay espacio disponible" | Aumentar capacidad_mb |
-| "Nodo no responde" | Verificar firewall/conectividad |
-| "Archivo no encontrado" | Usar opción 5 para listar archivos |
-
----
-
-## 📊 Estadísticas del Proyecto
-
-- **Líneas de código Python**: ~2000+
-- **Líneas de documentación**: ~1100+
-- **Módulos**: 13
-- **Tests**: 14 (unitarios)
-- **Documentos**: 4 (README, DIAGRAMA, GUIA, INDICE)
-
----
-
-## 🎓 Recursos Adicionales
-
-- 📖 **README.md** - Este archivo
-- 📊 **DIAGRAMA_FUNCIONAMIENTO.md** - Flujos detallados
-- ⚡ **GUIA_RAPIDA.md** - Uso rápido
-- 📑 **INDICE_DOCUMENTACION.md** - Índice de navegación
-
----
-
-## 📌 Requisitos
+## 🔧 Requisitos
 
 - Python 3.8+
-- pytest (para tests)
-- pytest-cov (para cobertura)
-- Socket (built-in)
-- JSON (built-in)
-- Threading (built-in)
+- pip
+- Dependencias: `pip install -r requirements.txt`
 
 ---
 
-**Autor**: Eddyfals0  
-**Materia**: Sistemas Operativos II  
-**Año**: 2025  
-**Estado**: ✅ Completo y Funcional
+## 📞 Soporte
+
+¿Problemas?
+
+1. Lee **INICIO_RAPIDO.md** (2 minutos)
+2. Consulta **MANUAL_ERRORES.md** (soluciones comunes)
+3. Revisa **INTERFAZ_GRAFICA.md** (uso de GUI)
+
+---
+
+## 🎓 Educación
+
+Proyecto final del curso **Sistemas Operativos II**
+
+Conceptos aplicados:
+- Sistemas distribuidos
+- Comunicación RPC (Remote Procedure Call)
+- Replicación de datos
+- Tolerancia a fallas
+- Tabla de páginas (paginación)
+- Sincronización entre procesos
+- Detección de nodos caídos
+
+---
+
+**SADTF v1.0**  
+**© 2025 - Eddyfals0**  
+**Proyecto Educativo**
